@@ -1,0 +1,10 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="820" rx="48" fill="#080b14"/>
+  <rect x="70" y="70" width="1060" height="680" rx="38" fill="#111827" stroke="#ff5a7a" stroke-opacity=".3"/>
+  <rect x="150" y="150" width="430" height="520" rx="34" fill="#ff5a7a" fill-opacity=".12"/>
+  <circle cx="365" cy="372" r="142" fill="#f5c044" fill-opacity=".18"/>
+  <path d="M720 190h250M720 280h330M720 370h270M720 530h250" stroke="#7ef7e0" stroke-width="18" stroke-linecap="round" stroke-opacity=".65"/>
+  <text x="150" y="115" fill="#7ef7e0" font-size="34" font-family="Consolas, monospace">Restaurant Web</text>
+  <text x="715" y="470" fill="#f7fbff" font-size="76" font-family="Segoe UI, sans-serif" font-weight="700">Menu-first</text>
+  <text x="715" y="610" fill="#aeb8c8" font-size="32" font-family="Segoe UI, sans-serif">Polished sections for a modern food brand.</text>
+</svg>

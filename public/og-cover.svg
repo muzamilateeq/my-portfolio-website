@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#060912"/>
+  <circle cx="950" cy="120" r="220" fill="#7ef7e0" fill-opacity=".14"/>
+  <circle cx="170" cy="520" r="260" fill="#ff5a7a" fill-opacity=".1"/>
+  <rect x="76" y="76" width="1048" height="478" rx="38" fill="#0d1320" stroke="#7ef7e0" stroke-opacity=".22"/>
+  <text x="118" y="178" fill="#7ef7e0" font-size="34" font-family="Consolas, monospace">Full-Stack Web &amp; Mobile App Developer</text>
+  <text x="118" y="300" fill="#f7fbff" font-size="88" font-family="Segoe UI, sans-serif" font-weight="800">Muzammal Ateeq</text>
+  <text x="118" y="390" fill="#aeb8c8" font-size="36" font-family="Segoe UI, sans-serif">React · Next.js · React Native · Supabase</text>
+  <text x="118" y="470" fill="#ff5a7a" font-size="30" font-family="Consolas, monospace">Building scalable apps, stunning UIs, future-ready code.</text>
+</svg>

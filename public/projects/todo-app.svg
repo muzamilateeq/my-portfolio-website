@@ -1,0 +1,17 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="820" rx="48" fill="#06100f"/>
+  <rect x="86" y="86" width="1028" height="648" rx="36" fill="#0d1320" stroke="#7ef7e0" stroke-opacity=".28"/>
+  <text x="170" y="178" fill="#7ef7e0" font-size="40" font-family="Consolas, monospace">Todo App</text>
+  <g fill="#f7fbff" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">
+    <text x="250" y="312">Plan portfolio sections</text>
+    <text x="250" y="434">Ship contact flow</text>
+    <text x="250" y="556">Polish mobile states</text>
+  </g>
+  <g stroke="#7ef7e0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M166 292l28 28 58-68"/>
+    <path d="M166 414l28 28 58-68"/>
+    <path d="M166 536l28 28 58-68"/>
+  </g>
+  <circle cx="970" cy="210" r="92" fill="#ff5a7a" fill-opacity=".16"/>
+  <circle cx="940" cy="610" r="128" fill="#7ef7e0" fill-opacity=".1"/>
+</svg>
