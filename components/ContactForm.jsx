@@ -3,107 +3,62 @@
 import emailjs from '@emailjs/browser'
 import { useState } from 'react'
 
-const initialState = {
-  ok: null,
-  message: '',
-}
-
 export function ContactForm() {
-  const [state, setState] = useState(initialState)
-  const [isPending, setIsPending] = useState(false)
+  const [state, setState] = useState({ ok: null, message: '' })
+  const [pending, setPending] = useState(false)
 
-  async function handleSubmit(event) {
-    event.preventDefault()
-
-    const form = event.currentTarget
-    const formData = new FormData(form)
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const fd = new FormData(e.currentTarget)
     const payload = {
-      name: String(formData.get('name') || '').trim(),
-      email: String(formData.get('email') || '').trim(),
-      message: String(formData.get('message') || '').trim(),
+      name:    String(fd.get('name')    || '').trim(),
+      email:   String(fd.get('email')   || '').trim(),
+      message: String(fd.get('message') || '').trim(),
     }
-
     if (!payload.name || !payload.email || !payload.message) {
-      setState({ ok: false, message: 'Please complete all fields before sending.' })
-      return
+      return setState({ ok: false, message: 'Please fill in all fields.' })
     }
-
-    const emailLooksValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)
-    if (!emailLooksValid) {
-      setState({ ok: false, message: 'Please use a valid email address.' })
-      return
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      return setState({ ok: false, message: 'Please enter a valid email address.' })
     }
-
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !templateId || !publicKey) {
-      setState({
-        ok: false,
-        message: 'EmailJS is not configured yet. Add your EmailJS keys in .env.local.',
-      })
-      return
+    const { NEXT_PUBLIC_EMAILJS_SERVICE_ID: svc, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: tmpl, NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: pub } = process.env
+    if (!svc || !tmpl || !pub) {
+      return setState({ ok: false, message: 'Contact form is not configured yet. Please email directly.' })
     }
-
-    setIsPending(true)
-    setState(initialState)
-
+    setPending(true)
+    setState({ ok: null, message: '' })
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: payload.name,
-          from_email: payload.email,
-          reply_to: payload.email,
-          to_email: 'muzamilateeq423@gmail.com',
-          message: payload.message,
-        },
-        { publicKey },
-      )
-
-      form.reset()
-      setState({ ok: true, message: 'Message sent successfully. Thank you!' })
-    } catch (error) {
-      console.error('EmailJS send failed:', error)
-      setState({
-        ok: false,
-        message: 'Message could not be sent right now. Please try again.',
-      })
+      await emailjs.send(svc, tmpl, { from_name: payload.name, from_email: payload.email, reply_to: payload.email, to_email: 'muzamilateeq423@gmail.com', message: payload.message }, { publicKey: pub })
+      e.target.reset()
+      setState({ ok: true, message: '✓ Message sent successfully! I\'ll get back to you soon.' })
+    } catch (err) {
+      console.error(err)
+      setState({ ok: false, message: 'Something went wrong. Please try emailing me directly.' })
     } finally {
-      setIsPending(false)
+      setPending(false)
     }
   }
 
   return (
-    <section className="contact-band" id="contact">
-      <div className="contact-copy">
-        <p className="eyebrow">Available for selected builds</p>
-        <h2>Need a clean app with serious engineering underneath?</h2>
+    <form className="form-card" onSubmit={handleSubmit} noValidate>
+      <div className="form-field">
+        <label className="form-label">Your Name</label>
+        <input name="name" type="text" className="form-input" placeholder="Alex Johnson" autoComplete="name" required />
       </div>
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label>
-          <span>Name</span>
-          <input name="name" type="text" autoComplete="name" required />
-        </label>
-        <label>
-          <span>Email</span>
-          <input name="email" type="email" autoComplete="email" required />
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea name="message" rows="4" required />
-        </label>
-        <button className="primary-action" type="submit" disabled={isPending}>
-          {isPending ? 'Sending...' : 'Contact Muzammal'}
-        </button>
-        {state.message ? (
-          <p className={state.ok ? 'form-status success' : 'form-status'}>
-            {state.message}
-          </p>
-        ) : null}
-      </form>
-    </section>
+      <div className="form-field">
+        <label className="form-label">Email Address</label>
+        <input name="email" type="email" className="form-input" placeholder="alex@example.com" autoComplete="email" required />
+      </div>
+      <div className="form-field">
+        <label className="form-label">Message</label>
+        <textarea name="message" className="form-input" rows={5} placeholder="Tell me about your project..." required style={{ resize: 'vertical' }} />
+      </div>
+      <button type="submit" className="btn-submit" disabled={pending}>
+        {pending ? 'Sending…' : 'Send Message →'}
+      </button>
+      {state.message && (
+        <p className={`form-msg ${state.ok ? 'success' : 'error'}`}>{state.message}</p>
+      )}
+    </form>
   )
 }

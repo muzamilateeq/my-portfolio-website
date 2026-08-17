@@ -1,0 +1,121 @@
+'use client'
+
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import { useState } from 'react'
+import { toast } from 'sonner'
+import { Send, Loader2 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Please enter a valid email address'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+})
+
+type ContactFormValues = z.infer<typeof contactSchema>
+
+export function ContactForm() {
+  const [isPending, setIsPending] = useState(false)
+  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+  })
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsPending(true)
+    try {
+      const { NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, NEXT_PUBLIC_EMAILJS_PUBLIC_KEY } = process.env
+      
+      if (!NEXT_PUBLIC_EMAILJS_SERVICE_ID || !NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || !NEXT_PUBLIC_EMAILJS_PUBLIC_KEY) {
+        throw new Error('EmailJS keys are missing')
+      }
+
+      await emailjs.send(
+        NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          reply_to: data.email,
+          to_email: 'muzamilateeq423@gmail.com',
+          message: data.message,
+        },
+        { publicKey: NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }
+      )
+      
+      toast.success('Message sent successfully! I will get back to you soon.')
+      reset()
+    } catch (error) {
+      console.error(error)
+      toast.error('Failed to send message. Please email me directly.')
+    } finally {
+      setIsPending(false)
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <div>
+        <label htmlFor="name" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+          Name
+        </label>
+        <input
+          {...register('name')}
+          id="name"
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+          placeholder="Your Name"
+        />
+        {errors.name && <p className="mt-2 text-sm font-medium text-rose-500">{errors.name.message}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+          Email
+        </label>
+        <input
+          {...register('email')}
+          id="email"
+          type="email"
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+          placeholder="Your Email"
+        />
+        {errors.email && <p className="mt-2 text-sm font-medium text-rose-500">{errors.email.message}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+          Message
+        </label>
+        <textarea
+          {...register('message')}
+          id="message"
+          rows={5}
+          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none font-medium"
+          placeholder="Tell me about your project..."
+        />
+        {errors.message && <p className="mt-2 text-sm font-medium text-rose-500">{errors.message.message}</p>}
+      </div>
+
+      <button
+        type="submit"
+        disabled={isPending}
+        className="w-full h-14 flex items-center justify-center gap-2 rounded-xl bg-indigo-600 font-bold text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-600/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+      >
+        {isPending ? (
+          <Loader2 size={20} className="animate-spin" />
+        ) : (
+          <>
+            Send Message <Send size={18} />
+          </>
+        )}
+      </button>
+    </form>
+  )
+}

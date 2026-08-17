@@ -1,0 +1,67 @@
+[
+  {
+    "id": "Ecommerce website",
+    "title": "Ecommerce website",
+    "shortDescription": "Full-stack e-commerce app with dynamic catalog, cart, secure Stripe checkout, and admin panel.",
+    "description": "A production-ready full-stack e-commerce platform built natively with Next.js (App Router) and TypeScript, leveraging React Server Components (RSC) for fast page rendering and search engine optimization.\n\nArchitectural & Feature Highlights:\n\nHybrid Rendering Pipeline: Uses Next.js Server Components and dynamic routing for instant catalog hydration, paired with client-side state handling for interactive filtering, search, and responsive product galleries.\n\nServer Actions & Route Handlers: Powered by Next.js Server Actions for secure backend logic, streamlined data mutations, and seamless integration with the relational database.\n\nStripe Checkout & Webhooks: Direct checkout session processing via Stripe API with secure Next.js API route webhooks to handle order fulfillment, payment verification, and automated status updates.\n\nCart & Checkout State: Optimized client-side cart architecture featuring dynamic quantity updates, promo code validation, and persistent storage without client-server hydration mismatch.\n\nGranular Admin Dashboard: Built-in dashboard views to create, edit, and delete products, manage inventory thresholds, and review incoming customer orders in real time.\n\nPerformance & Asset Optimization: Next.js next/image component integration for responsive, optimized WebP delivery and zero layout shift, styled with Tailwind CSS.",
+    "problem": "Finding matching blood donors during emergencies is often slow and relies heavily on social media shares, leading to critical delays.",
+    "solution": "Engineered a centralized real-time database and request routing system that matches patients with nearby verified donors instantly.",
+    "metrics": [
+      "Reduced donor finding time by 60%",
+      "Served over 500+ successful matches",
+      "Real-time notification system"
+    ],
+    "stack": [
+      "React",
+      "Next.js",
+      "Supabase",
+      "Tailwind CSS"
+    ],
+    "image": "/projects/img-1786957280023-435179694.png",
+    "liveUrl": "http://poundsmarket.com/",
+    "githubUrl": "https://github.com/muzamilateeq/MarketHub",
+    "featured": true
+  },
+  {
+    "id": "restaurant-web",
+    "title": "Restaurant Management OS",
+    "shortDescription": "Professional food delivery and restaurant management UI.",
+    "description": "An all-in-one digital storefront and management dashboard for modern restaurants, enabling seamless order tracking, menu updates, and customer engagement.",
+    "problem": "Restaurants struggle to manage disparate systems for point-of-sale, delivery routing, and digital menus.",
+    "solution": "Built a unified dashboard providing real-time order states and inventory tracking.",
+    "metrics": [
+      "Supports 10k+ daily transactions",
+      "Sub-100ms UI interactions"
+    ],
+    "stack": [
+      "React",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "image": "/projects/restaurant-web-screenshot.png",
+    "liveUrl": "https://resturentweb-gules.vercel.app/",
+    "featured": true
+  },
+  {
+    "id": "govconnect",
+    "title": "GovConnect Portal",
+    "shortDescription": "Public services portal for government services and application tracking.",
+    "description": "A modern, accessible web portal designed for citizens to easily access government schemes, jobs, and track their application statuses online.",
+    "problem": "Legacy government websites are difficult to navigate, lacking responsive design and clear application tracking.",
+    "solution": "Developed a fully responsive, WCAG-compliant portal with intuitive search and state management for multi-step applications.",
+    "metrics": [
+      "Achieved 99 Lighthouse Accessibility Score",
+      "Mobile traffic engagement increased by 140%"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "image": "/projects/govconnect-green-preview.png",
+    "liveUrl": "https://gov-connect-web01.vercel.app/",
+    "featured": true
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "freelance-fullstack",
+    "role": "Full-Stack Developer",
+    "company": "Independent / Freelance",
+    "period": "2023 - Present",
+    "description": "Partnering with startups and local businesses to architect and deliver scalable web and mobile applications from 0 to 1.",
+    "achievements": [
+      "Engineered a complete food delivery ecosystem including customer UI, restaurant dashboard, and admin panel using React & Supabase.",
+      "Developed a public healthcare routing platform (Blood Donation System) to connect donors with patients under 50ms latency.",
+      "Optimized client portfolios achieving 99+ Lighthouse scores and 40% increased conversion rates."
+    ]
+  },
+  {
+    "id": "frontend-engineer",
+    "role": "Frontend Engineer",
+    "company": "Tech Solutions Studio",
+    "period": "2021 - 2023",
+    "description": "Led the frontend development of various client web applications, focusing on React and modern CSS frameworks.",
+    "achievements": [
+      "Migrated legacy jQuery applications to modern React.js architectures.",
+      "Implemented robust state management solutions utilizing Redux Toolkit across 5 major enterprise apps.",
+      "Mentored junior developers and established UI component libraries using Storybook."
+    ]
+  }
+]

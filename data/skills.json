@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Frontend & Mobile",
+    "skills": [
+      "React.js", "Next.js 14", "React Native", "TypeScript", "JavaScript (ES6+)",
+      "Flutter", "Swift (iOS)", "Kotlin (Android)", "Tailwind CSS", "Zustand", "HTML5", "CSS3"
+    ]
+  },
+  {
+    "title": "Backend & Languages",
+    "skills": [
+      "Node.js", "Python", "Go (Golang)", "Rust", "C++", "Java", "PHP",
+      "Express.js", "GraphQL", "REST APIs", "gRPC"
+    ]
+  },
+  {
+    "title": "Game Development",
+    "skills": [
+      "H5 Game Development", "Three.js", "WebGL", "Canvas API", "Phaser.js", "Unity"
+    ]
+  },
+  {
+    "title": "Databases & Cloud",
+    "skills": [
+      "PostgreSQL", "MongoDB", "Redis", "MySQL", "Supabase", "Firebase",
+      "Prisma ORM", "AWS", "Docker", "Kubernetes", "Vercel", "Git"
+    ]
+  }
+]

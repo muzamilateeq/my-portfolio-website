@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Rivera / Product Designer</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#dae2fd",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "tertiary": "#943700",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-background": "#191b23",
+                    "surface-variant": "#e1e2ed",
+                    "primary-container": "#2563eb",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#b4c5ff",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-container-highest": "#e1e2ed",
+                    "secondary": "#565e74",
+                    "inverse-on-surface": "#f0f0fb",
+                    "surface-container-high": "#e7e7f3",
+                    "surface-bright": "#faf8ff",
+                    "surface": "#faf8ff",
+                    "outline-variant": "#c3c6d7",
+                    "secondary-fixed": "#dae2fd",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "inverse-surface": "#2e3039",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#ffede6",
+                    "on-primary-fixed": "#00174b",
+                    "on-surface-variant": "#434655",
+                    "tertiary-container": "#bc4800",
+                    "outline": "#737686",
+                    "surface-dim": "#d9d9e5",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "surface-container-low": "#f3f3fe",
+                    "primary": "#004ac6",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#eeefff",
+                    "on-surface": "#191b23",
+                    "surface-container": "#ededf9",
+                    "tertiary-fixed": "#ffdbcd",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-tint": "#0053db",
+                    "on-secondary-container": "#5c647a",
+                    "background": "#faf8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "section-gap": "160px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Montserrat", "sans-serif"
+                    ],
+                    "headline-lg": [
+                            "Montserrat", "sans-serif"
+                    ],
+                    "label-sm": [
+                            "Inter", "sans-serif"
+                    ],
+                    "display-lg-mobile": [
+                            "Montserrat", "sans-serif"
+                    ],
+                    "body-lg": [
+                            "Inter", "sans-serif"
+                    ],
+                    "headline-lg-mobile": [
+                            "Montserrat", "sans-serif"
+                    ],
+                    "headline-md": [
+                            "Montserrat", "sans-serif"
+                    ],
+                    "body-md": [
+                            "Inter", "sans-serif"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "84px",
+                            {
+                                    "lineHeight": "90px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "48px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "30px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "38px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "26px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hero-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .hero-reveal:nth-child(1) { animation-delay: 0.1s; }
+        .hero-reveal:nth-child(2) { animation-delay: 0.3s; }
+        .hero-reveal:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile py-unit min-h-[72px]">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md font-extrabold tracking-tighter text-on-surface dark:text-surface-bright" href="#">STUDIO.ALPHA</a>
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center gap-8 font-label-sm text-label-sm uppercase tracking-widest">
+<li><a class="text-primary dark:text-primary-fixed-dim border-b border-primary dark:border-primary-fixed-dim pb-1 transition-colors duration-300" href="#">Home</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Portfolio</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">About</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-70 transition-opacity duration-300" href="#">
+                Let's Talk
+            </a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile pt-32 pb-section-gap min-h-[716px] flex flex-col justify-center">
+<div class="max-w-4xl">
+<h1 class="hero-reveal font-display-lg max-md:font-display-lg-mobile text-display-lg max-md:text-display-lg-mobile text-on-surface mb-8">
+                    ALEX RIVERA / <br/> PRODUCT DESIGNER
+                </h1>
+<p class="hero-reveal font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl leading-relaxed">
+                    Crafting minimal, high-performance digital experiences. Focused on systematic design and typography-driven interfaces for forward-thinking brands.
+                </p>
+<div class="hero-reveal flex gap-6 items-center">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity" href="#featured">
+                        View Work
+                    </a>
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                        About Me
+                        <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Featured Work Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile pb-section-gap" id="featured">
+<div class="flex justify-between items-end mb-16 border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-lg max-md:font-headline-lg-mobile text-headline-lg max-md:text-headline-lg-mobile text-on-surface">Featured Work</h2>
+<a class="hidden md:inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors" href="#">
+                    View All Projects
+                    <span class="material-symbols-outlined text-[16px]" data-icon="east">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Project 1 (Full Width) -->
+<a class="project-card group md:col-span-12 relative block overflow-hidden mb-8" href="#">
+<div class="aspect-[16/9] w-full bg-surface-variant relative overflow-hidden rounded-DEFAULT border border-outline-variant/30">
+<img alt="Project Preview" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" data-alt="A clean, minimalist mobile banking app interface displayed on a sleek smartphone mockup, set against a pristine light grey studio background. The UI features stark white cards, precise typography, and subtle electric blue accent elements. The lighting is soft and diffuse, highlighting the premium glassmorphism effects and creating a sophisticated, high-end editorial tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaElhPXif4a1HU9jDz4HPmobw1a5KXjL5OKphgZFvph-ld6Eg5tCMagHRq5tWIFTckHA2U2se6-BAhYrdlgLc12Axr-iRl9dFmzxUSaMvEq4aYfh_WUvL6KWFmSxEkxaRfmjoGzjTQOU_zZo2n97moyHhkXW3eHNbtVPe3iIs0THBNAKdbO1kthonmMABDb_zbtNz042JoU1VWgH6LostKPlESuvxlzw_HYGEoIP_9IG8CuXYrwypYBA"/>
+</div>
+<div class="mt-6 flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Fintech OS Redesign</h3>
+<div class="flex gap-3 mt-3">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest rounded-sm">UX/UI</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest rounded-sm">Systems</span>
+</div>
+</div>
+</div>
+</a>
+<!-- Project 2 (Half Width) -->
+<a class="project-card group md:col-span-6 relative block overflow-hidden" href="#">
+<div class="aspect-square w-full bg-surface-variant relative overflow-hidden rounded-DEFAULT border border-outline-variant/30">
+<img alt="Project Preview" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" data-alt="A high-end e-commerce website conceptual design shown on a modern laptop screen in an elegant, sunlit workspace. The screen displays large, striking photography with generous whitespace and stark, minimalist typography. The surrounding environment includes subtle shadows, a neutral palette, and an atmosphere of refined luxury and deliberate editorial clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5-qdYn-F6GG5Xjw7J67gA5PJ5yl3Ro534qmieZ53G818Sz6Y9I6XY2xoAgldpyEHLnt5KMyhFIAM313-WtRtXt0lhUgWiWv9M6vQQEKaAoPg7b3OHp1HzJSLG_etTRXLzE0eu6xXQCLQGwvkVIPhYfVQi_M9fiyV8Kl4-hyYMBK-XjPqPU7rHQBr4xhMgsHsnSwl4uM9ydBztbvaJjQ5eUgWFVaMcT3EhxpnnNIdrxnEW-uYLqKrAQ"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Aura Commerce</h3>
+<div class="flex gap-3 mt-3">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest rounded-sm">Web Design</span>
+</div>
+</div>
+</a>
+<!-- Project 3 (Half Width) -->
+<a class="project-card group md:col-span-6 relative block overflow-hidden" href="#">
+<div class="aspect-square w-full bg-surface-variant relative overflow-hidden rounded-DEFAULT border border-outline-variant/30">
+<img alt="Project Preview" class="w-full h-full object-cover transition-transform duration-700 ease-in-out" data-alt="A series of digital smart home interface panels arranged asymmetrically on a vast, seamless white canvas. The interfaces demonstrate precise data visualization, using thin strokes and subtle gradient fills in deep blacks and primary blues. The composition feels like a modern art gallery exhibit, emphasizing structure, alignment, and an emotionally calm, highly systematic design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC1YxS9LtRT0-JwEsgUQeBNhkwu9eFSFxVEBVv4vBO__SfAcqQI7ek-wWvHkGutn16sQqQbE1WYvze_s01GmXDjaqzjW5XJYlLMuUj9xgSjKBXOMKHm0N5l8MZhzVZ_qcroWNN_NA1gANwJkkeGql4S2CQwizUzz5d9kupEWCSrK7jHVKeJJThYGxCqm88loMD-cspCgKmu7ED9RX3JJyuEX3F1wnmSVmdmkzjmHT9-Q7siPMfKcNimQ"/>
+</div>
+<div class="mt-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Habitat Dashboard</h3>
+<div class="flex gap-3 mt-3">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest rounded-sm">Dashboard</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest rounded-sm">Data Viz</span>
+</div>
+</div>
+</a>
+</div>
+<div class="mt-16 text-center md:hidden">
+<a class="inline-flex items-center justify-center px-8 py-4 border border-outline text-on-surface font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-high transition-colors w-full" href="#">
+                    View All Projects
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full mt-section-gap bg-surface dark:bg-background border-t border-outline-variant/20 transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-desktop max-md:px-margin-mobile py-gutter gap-8 md:gap-0">
+<!-- Copyright -->
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-secondary-fixed-dim order-3 md:order-1">
+                © 2024 Studio Alpha. All rights reserved.
+            </p>
+<!-- Brand Logo -->
+<div class="font-display-lg text-headline-md font-black text-on-surface dark:text-surface-bright order-1 md:order-2">
+                STUDIO.ALPHA
+            </div>
+<!-- Links -->
+<ul class="flex gap-6 font-body-md text-body-md order-2 md:order-3">
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">LinkedIn</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Dribbble</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Instagram</a></li>
+<li><a class="text-on-surface-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Email</a></li>
+</ul>
+</div>
+</footer>
+</body></html>
