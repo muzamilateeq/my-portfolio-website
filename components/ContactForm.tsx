@@ -63,53 +63,53 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+        <label htmlFor="name" className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">
           Name
         </label>
         <input
           {...register('name')}
           id="name"
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+          className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-4 py-4 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all font-medium placeholder:text-slate-600"
           placeholder="Your Name"
         />
-        {errors.name && <p className="mt-2 text-sm font-medium text-rose-500">{errors.name.message}</p>}
+        {errors.name && <p className="mt-2 text-sm font-medium text-rose-400">{errors.name.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+        <label htmlFor="email" className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">
           Email
         </label>
         <input
           {...register('email')}
           id="email"
           type="email"
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+          className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-4 py-4 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all font-medium placeholder:text-slate-600"
           placeholder="Your Email"
         />
-        {errors.email && <p className="mt-2 text-sm font-medium text-rose-500">{errors.email.message}</p>}
+        {errors.email && <p className="mt-2 text-sm font-medium text-rose-400">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+        <label htmlFor="message" className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">
           Message
         </label>
         <textarea
           {...register('message')}
           id="message"
           rows={5}
-          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all resize-none font-medium"
+          className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-4 py-4 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all resize-none font-medium placeholder:text-slate-600"
           placeholder="Tell me about your project..."
         />
-        {errors.message && <p className="mt-2 text-sm font-medium text-rose-500">{errors.message.message}</p>}
+        {errors.message && <p className="mt-2 text-sm font-medium text-rose-400">{errors.message.message}</p>}
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="w-full h-14 flex items-center justify-center gap-2 rounded-xl bg-indigo-600 font-bold text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-600/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        className="w-full h-14 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 font-extrabold text-white hover:from-violet-500 hover:to-indigo-500 shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       >
         {isPending ? (
-          <Loader2 size={20} className="animate-spin" />
+          <Loader2 size={20} className="animate-spin text-white" />
         ) : (
           <>
             Send Message <Send size={18} />

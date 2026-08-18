@@ -1,9 +1,31 @@
 [
   {
+    "id": "proj-1787043856556",
+    "title": "BLOOD_FINDER",
+    "shortDescription": "A Blood Finder platform that helps users quickly find and connect with blood donors based on blood group and location, making the blood donation process faster and easier.",
+    "description": "A modern Blood Finder application designed to connect people in need of blood with potential donors quickly and efficiently. Users can search for available donors based on blood group and location, making it easier to find the right donor during urgent situations.\n\nThe app provides a simple, user-friendly interface for donor registration, blood group searching, and connecting with potential donors. It is designed to make blood donation more accessible and help build a connected community of blood donors.\n",
+    "stack": [],
+    "metrics": [],
+    "image": "/projects/img-1787043899989-473593079.jpg",
+    "featured": false,
+    "liveUrl": "https://blood-donation-kappa-ten.vercel.app/"
+  },
+  {
+    "id": "pubgleaguemanagemnet",
+    "title": "PUBG_LEAGUE",
+    "shortDescription": "A modern PUBG League Management platform for managing teams, match results, rankings, and points tables..",
+    "description": "A professional PUBG League Management platform designed to manage competitive tournaments and display team standings in a clean, organized interface. The website allows organizers to manage teams, update match results, calculate points, and display rankings through an easy-to-use dashboard.\n\nThe platform provides a responsive experience across desktop and mobile devices, making it simple for players, teams, and viewers to track tournament progress, team performance, points, and overall league rankings.\n",
+    "stack": [],
+    "metrics": [],
+    "image": "/projects/img-1787043270530-170643804.png",
+    "featured": true,
+    "liveUrl": "https://pubg-leagues.vercel.app/"
+  },
+  {
     "id": "Ecommerce website",
     "title": "Ecommerce website",
     "shortDescription": "Full-stack e-commerce app with dynamic catalog, cart, secure Stripe checkout, and admin panel.",
-    "description": "A production-ready full-stack e-commerce platform built natively with Next.js (App Router) and TypeScript, leveraging React Server Components (RSC) for fast page rendering and search engine optimization.\n\nArchitectural & Feature Highlights:\n\nHybrid Rendering Pipeline: Uses Next.js Server Components and dynamic routing for instant catalog hydration, paired with client-side state handling for interactive filtering, search, and responsive product galleries.\n\nServer Actions & Route Handlers: Powered by Next.js Server Actions for secure backend logic, streamlined data mutations, and seamless integration with the relational database.\n\nStripe Checkout & Webhooks: Direct checkout session processing via Stripe API with secure Next.js API route webhooks to handle order fulfillment, payment verification, and automated status updates.\n\nCart & Checkout State: Optimized client-side cart architecture featuring dynamic quantity updates, promo code validation, and persistent storage without client-server hydration mismatch.\n\nGranular Admin Dashboard: Built-in dashboard views to create, edit, and delete products, manage inventory thresholds, and review incoming customer orders in real time.\n\nPerformance & Asset Optimization: Next.js next/image component integration for responsive, optimized WebP delivery and zero layout shift, styled with Tailwind CSS.",
+    "description": "A production-ready full-stack e-commerce platform built natively with Next.js (App Router) and TypeScript, leveraging React Server Components (RSC) for fast page rendering and search engine optimization.\n\nArchitectural & Feature Highlights:\n\nHybrid Rendering Pipeline: Uses Next.js Server Components and dynamic routing for instant catalog hydration, paired with client-side state handling for interactive filtering, search, and responsive product galleries.\n\nServer Actions & Route Handlers: Powered by Next.js Server Actions for secure backend logic, streamlined data mutations, and seamless integration with the relational database.\n\nStripe Checkout & Webhooks: Direct checkout session processing via Stripe API with secure Next.js API route webhooks to handle order fulfillment, payment verification, and automated status updates.\n\nCart & Checkout State: Optimized client-side cart architecture featuring dynamic quantity updates, promo code validation, and persistent storage without client-server hydration mismatch.\n\nGranular Admin Dashboard: Built-in dashboard views to create, edit, and delete products, manage inventory thresholds, and review incoming customer orders in real time.\n",
     "problem": "Finding matching blood donors during emergencies is often slow and relies heavily on social media shares, leading to critical delays.",
     "solution": "Engineered a centralized real-time database and request routing system that matches patients with nearby verified donors instantly.",
     "metrics": [

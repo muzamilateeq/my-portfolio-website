@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { loginAction } from '../../actions/auth'
-import { Lock, Loader2 } from 'lucide-react'
+import { Lock, Loader2, ShieldCheck, Sparkles } from 'lucide-react'
 
 export default function LoginPage() {
   const [error, setError] = useState('')
@@ -27,47 +27,53 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-slate-50 p-6">
-      <div className="w-full max-w-md bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-8 sm:p-10">
-        <div className="flex flex-col items-center mb-10">
-          <div className="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6">
-            <Lock size={32} />
+    <div className="min-h-screen flex flex-col justify-center items-center bg-[#030712] p-6 relative overflow-hidden">
+      {/* Glow Blobs */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-violet-600/15 blur-[160px] rounded-full pointer-events-none" />
+
+      <div className="w-full max-w-md glass-panel rounded-[2.5rem] border border-white/15 shadow-2xl p-8 sm:p-10 relative z-10 bg-[#030712]/90">
+        <div className="flex flex-col items-center mb-10 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-violet-600/20 to-cyan-500/20 border border-violet-400/30 flex items-center justify-center text-violet-300 shadow-[0_0_25px_rgba(139,92,246,0.3)] mb-6">
+            <Lock size={30} />
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">Admin Login</h1>
-          <p className="text-slate-500 mt-2 text-center text-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-bold mb-3">
+            <ShieldCheck size={14} /> Portfolio System Admin
+          </div>
+          <h1 className="text-3xl font-black text-white">Admin Authentication</h1>
+          <p className="text-slate-400 mt-2 text-sm font-medium">
             Enter your credentials to access the portfolio dashboard.
           </p>
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-rose-50 border border-rose-200 text-rose-600 text-sm font-medium rounded-xl">
+          <div className="mb-6 p-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm font-bold rounded-2xl">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+            <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">
               Email
             </label>
             <input
               name="email"
               type="email"
               required
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+              className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-4 py-4 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all font-medium placeholder:text-slate-600"
               placeholder="admin@example.com"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+            <label className="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">
               Password
             </label>
             <input
               name="password"
               type="password"
               required
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all font-medium"
+              className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-4 py-4 text-white outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all font-medium placeholder:text-slate-600"
               placeholder="••••••••"
             />
           </div>
@@ -75,9 +81,9 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-14 flex items-center justify-center gap-2 rounded-xl bg-indigo-600 font-bold text-white hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-indigo-600/30 disabled:opacity-50"
+            className="w-full h-14 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 font-extrabold text-white shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:from-violet-500 hover:to-indigo-500 transition-all hover:-translate-y-0.5 disabled:opacity-50"
           >
-            {loading ? <Loader2 size={20} className="animate-spin" /> : 'Sign In'}
+            {loading ? <Loader2 size={20} className="animate-spin text-white" /> : 'Sign In to Dashboard'}
           </button>
         </form>
       </div>

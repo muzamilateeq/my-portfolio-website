@@ -27,7 +27,9 @@ export function LiveTerminal() {
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (history.length > 1) {
+      endRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
   }, [history])
 
   const handleCommand = (e: React.FormEvent) => {
@@ -97,45 +99,45 @@ export function LiveTerminal() {
 
   return (
     <div 
-      className="w-full max-w-2xl mx-auto rounded-2xl overflow-hidden border border-slate-200 bg-white/80 backdrop-blur-xl font-mono text-sm shadow-2xl shadow-indigo-500/10"
+      className="w-full max-w-2xl mx-auto rounded-2xl overflow-hidden border border-slate-200/60 bg-white/80 backdrop-blur-xl font-mono text-sm shadow-[0_8px_30px_rgb(0,0,0,0.08)]"
       onClick={() => inputRef.current?.focus()}
     >
       {/* Terminal Header */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-200 bg-slate-50/80">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-200/60 bg-slate-50/80">
         <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-rose-400 border border-rose-500/20" />
+          <div className="w-3 h-3 rounded-full bg-rose-500 border border-rose-600/20" />
           <div className="w-3 h-3 rounded-full bg-amber-400 border border-amber-500/20" />
-          <div className="w-3 h-3 rounded-full bg-emerald-400 border border-emerald-500/20" />
+          <div className="w-3 h-3 rounded-full bg-emerald-500 border border-emerald-600/20" />
         </div>
-        <div className="flex-1 text-center flex items-center justify-center gap-2 text-slate-400 font-medium text-xs">
-          <TerminalIcon size={12} /> bash ~ guest@muzammal.dev
+        <div className="flex-1 text-center flex items-center justify-center gap-2 text-slate-500 font-bold text-xs">
+          <TerminalIcon size={12} /> zsh ~ guest@muzammal.dev
         </div>
       </div>
 
       {/* Terminal Body */}
-      <div className="p-5 h-[300px] overflow-y-auto cursor-text">
+      <div className="p-5 h-[300px] overflow-y-auto cursor-text text-slate-700 font-medium">
         {history.map((entry, i) => (
           <div key={i} className="mb-4">
             {entry.command && (
-              <div className="flex items-center gap-2 mb-1 font-semibold">
-                <span className="text-indigo-500">➜</span>
+              <div className="flex items-center gap-2 mb-1 font-bold">
+                <span className="text-indigo-600">➜</span>
                 <span className="text-violet-500">~</span>
-                <span className="text-slate-800">{entry.command}</span>
+                <span className="text-slate-900">{entry.command}</span>
               </div>
             )}
             <div className="pl-4">{entry.output}</div>
           </div>
         ))}
         
-        <form onSubmit={handleCommand} className="flex items-center gap-2 font-semibold">
-          <span className="text-indigo-500">➜</span>
+        <form onSubmit={handleCommand} className="flex items-center gap-2 font-bold">
+          <span className="text-indigo-600">➜</span>
           <span className="text-violet-500">~</span>
           <input
             ref={inputRef}
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}
-            className="flex-1 bg-transparent outline-none text-slate-800 placeholder:text-slate-300"
+            className="flex-1 bg-transparent outline-none text-slate-900 placeholder:text-slate-400"
             autoComplete="off"
             spellCheck="false"
           />

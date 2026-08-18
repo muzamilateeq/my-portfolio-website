@@ -70,3 +70,38 @@ export async function saveExperienceAction(experience: Experience[]) {
     return { success: false, error: 'Failed to save changes.' }
   }
 }
+
+export interface ProfileData {
+  name: string
+  title: string
+  avatar: string
+  status: string
+}
+
+const getProfileFilePath = () => path.join(process.cwd(), 'data', 'profile.json')
+
+export async function getProfileAction(): Promise<ProfileData> {
+  try {
+    const data = await fs.readFile(getProfileFilePath(), 'utf-8')
+    return JSON.parse(data) as ProfileData
+  } catch (error) {
+    return {
+      name: 'Muzammal Ateeq',
+      title: 'Full-Stack Engineer',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&auto=format&fit=crop',
+      status: 'Available for Hire & Contract'
+    }
+  }
+}
+
+export async function saveProfileAction(profile: ProfileData) {
+  try {
+    await fs.writeFile(getProfileFilePath(), JSON.stringify(profile, null, 2), 'utf-8')
+    revalidatePath('/')
+    revalidatePath('/admin/profile')
+    return { success: true }
+  } catch (error) {
+    return { success: false, error: 'Failed to save profile settings.' }
+  }
+}
+
